@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:roommmez/Widgets/NavigationBar.dart';
+import 'package:roommmez/Widgets/QuickMessages.dart';
 
 class HomeScreen extends StatelessWidget {
     @override
@@ -17,8 +18,20 @@ class HomeScreen extends StatelessWidget {
         return SafeArea(
             child: Column(
                 children: <Widget>[
-                    NavigationBar()
+                    NavigationBar(),
+                    _createListView()
                 ],
+            ),
+        );
+    }
+
+    ///Create ListView
+    Widget _createListView() {
+        return Expanded(
+            child: ListView(
+                children: <Widget>[
+                    QuickMessages()
+                ]
             ),
         );
     }
